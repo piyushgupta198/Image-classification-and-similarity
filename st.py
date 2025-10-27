@@ -18,10 +18,10 @@ from ultralytics import YOLO
 st.set_page_config(
     page_title="Image Classification + Similarity",
     page_icon="🧠",
-    layout="wide",
-    initial_sidebar_state="expanded",
+    layout="wide"
+    # initial_sidebar_state="expanded",
 )
-st.title("🧠 Image Classification + In-Class Similarity Search")
+st.title("🧠 Clothes Classification")
 
 
 # =========================
@@ -40,10 +40,6 @@ elif( user_selection == "Kids"):
     MODEL_PATH = os.path.normpath("models\kids_model.pt")
     MENS_BASE_DIR = r"IMAGES\KIDS"
 
-
-
-# MEN_MODEL_PATH = os.path.normpath(r"runs\classify\train\weights\best.pt")
-# MENS_BASE_DIR = r"IMAGES\MENS"
 
 FCLIP_NAME = "patrickjohncyh/fashion-clip"
 VALID_EXTS = (".jpg", ".jpeg", ".png", ".webp", ".bmp")
@@ -201,7 +197,7 @@ st.success(f"Models ready. Device for similarity: {fclip_device}")
 images = st.file_uploader(
     label="Upload one or more images",
     type=["jpg", "jpeg", "png", "JPG", "PNG"],
-    accept_multiple_files=True,
+    accept_multiple_files=True
 )
 
 run_button = st.button("Classify & Find Similar")
@@ -297,4 +293,6 @@ if run_button:
                         st.image(thumb, use_container_width=True)
                     except Exception:
                         st.image(pil_img, caption=f"(Couldn't open) Similarity: {score:.4f}", use_container_width=True)
-                    st.caption(p)
+                    barcode = p.split('\\')[-1].split('.')[0]
+                    print("this is print",barcode)
+                    st.caption(f"Barcode: {barcode}")
