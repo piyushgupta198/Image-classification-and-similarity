@@ -35,7 +35,7 @@ if user_selection == "Mens":
     MENS_BASE_DIR = os.path.join("IMAGES", "MENS")
 elif user_selection == "Womens":
     MODEL_PATH = os.path.join("models", "ladies_model.pt")
-    MENS_BASE_DIR = os.path.join("IMAGES", "WOMENS")
+    MENS_BASE_DIR = os.path.join("IMAGES", "LADIES")
 elif user_selection == "Kids":
     MODEL_PATH = os.path.join("models", "kids_model.pt")
     MENS_BASE_DIR = os.path.join("IMAGES", "KIDS")
