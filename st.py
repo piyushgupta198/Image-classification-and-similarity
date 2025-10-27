@@ -189,7 +189,8 @@ def build_or_get_class_index(
 with st.spinner("Loading models…"):
     clf_model = load_yolo_classifier(MODEL_PATH)
     fclip_model, fclip_processor, fclip_device = load_fashionclip(FCLIP_NAME)
-st.success(f"Models ready. Device for similarity: {fclip_device}")
+# st.success(f"Models ready. Device for similarity: {fclip_device}")
+st.success("Models ready to identify...")
 
 
 # =========================
