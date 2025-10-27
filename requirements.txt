@@ -4,3 +4,4 @@ transformers
 Pillow
 ultralytics
 numpy
+opencv-python
