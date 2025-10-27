@@ -31,13 +31,13 @@ st.title("🧠 Image Classification + In-Class Similarity Search")
 user_selection = st.selectbox("Select Category", ["Mens", "Kids","Womens"], key="category_select")
 
 if( user_selection == "Mens"):
-    MODEL_PATH = os.path.normpath("models\mens_model.pt")
+    MODEL_PATH = os.path.normpath("models/mens_model.pt")
     MENS_BASE_DIR = r"IMAGES\MENS"
 elif( user_selection == "Womens"):
-    MODEL_PATH = os.path.normpath("models\ladies_model.pt")
+    MODEL_PATH = os.path.normpath("models/ladies_model.pt")
     MENS_BASE_DIR = r"IMAGES\WOMENS"
 elif( user_selection == "Kids"):
-    MODEL_PATH = os.path.normpath("models\kids_model.pt")
+    MODEL_PATH = os.path.normpath("models/kids_model.pt")
     MENS_BASE_DIR = r"IMAGES\KIDS"
 
 
