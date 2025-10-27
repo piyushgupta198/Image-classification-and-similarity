@@ -295,6 +295,6 @@ if run_button:
                         st.image(thumb, use_container_width=True)
                     except Exception:
                         st.image(pil_img, caption=f"(Couldn't open) Similarity: {score:.4f}", use_container_width=True)
-                    barcode = p.split('\\')[-1].split('.')[0]
+                    barcode = p.split('/')[-1].split('.')[0]
                     print("this is print",barcode)
                     st.caption(f"Barcode: {barcode}")
