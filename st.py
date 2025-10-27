@@ -85,9 +85,7 @@ def load_image_for_model(uploaded_file):
 
 
 def classify_image(model: YOLO, img: Image.Image) -> Tuple[str, float]:
-    """
-    Accept PIL.Image | path-like | numpy | file-like; returns (class_name, confidence).
-    """
+
     results = model.predict(img, verbose=False)
     r0 = results[0]
     probs = r0.probs
@@ -177,10 +175,7 @@ def build_or_get_class_index(
     model_name: str,
     batch_size: int,
 ) -> Tuple[torch.Tensor, List[str]]:
-    """
-    Cache is keyed by (class_dir, model_name, batch_size) automatically via streamlit.
-    Stores tensors on CPU to be safer across CUDA contexts; we’ll move to device on use.
-    """
+
     model, processor, device = load_fashionclip(model_name)
     with st.spinner(f"Indexing images in: {class_dir}"):
         paths = iter_image_paths(class_dir)
